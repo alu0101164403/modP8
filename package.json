@@ -26,5 +26,9 @@
     "ts-node": "^10.5.0",
     "tsc-watch": "^4.6.0",
     "typedoc": "^0.22.12"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.2",
+    "lowdb": "^3.0.0"
   }
 }
