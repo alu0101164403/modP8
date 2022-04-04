@@ -23,9 +23,25 @@ export class Merge implements Strategy {
   }
   // eslint-disable-next-line max-len
   private mergeSort(izda: number, mitad: number, dcha: number, lista: number[]): void {
-    let aux: number[] = [];
+    const aux: number[] = [];
+    let i: number = 0;
+    let j: number = 0;
+    let k: number = 0;
     for (let i = izda; i <= dcha; i++) {
       aux[i] = lista[i];
+    }
+    i = izda;
+    j = mitad + 1;
+    k = izda;
+    while (i <= mitad && j <= dcha) {
+      if (aux[i] <= aux[j]) {
+        lista[k++] = aux[i++];
+      } else {
+        lista[k++] = aux[j++];
+      }
+    }
+    while (i <= mitad) {
+      lista[k++] = aux[i++];
     }
   }
 }
