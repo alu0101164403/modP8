@@ -1,14 +1,11 @@
-/* eslint-disable valid-jsdoc */
-/**
- * indicar que hace la funcion
- * esto es un comentario en typedoc, https://typedoc.org/guides/
- */
+import {Buble} from '../src/buble';
+import {Solver} from '../src/solver';
+import {Merge} from '../src/merge';
 
-// eslint-disable-next-line require-jsdoc
-export function add(primerNumero: number, segundoNumero: number): number {
-  return primerNumero + segundoNumero;
-}
 
-console.log(add(1, 7));
-console.log('Hola Mundo');
+const mySolver = new Solver([5, 23, 9, 1, 0, 7, 2], new Buble());
+console.log(mySolver.logic());
+/*
+mySolver.setStrategy(new Merge());
+mySolver.logic();*/
 
