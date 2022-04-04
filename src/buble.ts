@@ -12,19 +12,18 @@ export class Buble implements Strategy {
    * @returns listaOrdenar: number[], devuelve el mismo vector ordenado
    */
   execute(listaOrdenar: number[]): number[] {
-    console.log('hola');
     let i: number = 0;
     while (i < listaOrdenar.length) {
       listaOrdenar.forEach((numero, indice) => {
-        console.log(numero);
-        console.log(listaOrdenar[indice+1]);
-        if (numero > listaOrdenar[indice+1]) {
+        // eslint-disable-next-line max-len
+        if ((indice+1) <= listaOrdenar.length && numero > listaOrdenar[indice+1]) {
           listaOrdenar[indice] = listaOrdenar[indice+1];
           listaOrdenar[indice+1] = numero;
         }
       });
       i++;
     }
+    console.log(listaOrdenar);
     return listaOrdenar;
   }
 }
